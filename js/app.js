@@ -1,6 +1,7 @@
+var myVar;
 document.addEventListener('DOMContentLoaded', function() {
 
-    var myVar;
+
     var xhr = new XMLHttpRequest();
     
     xhr.open("GET", "json/all.json", true);

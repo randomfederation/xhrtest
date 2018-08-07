@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('insideOnload').innerHTML = myVar;
     };
 
-    xhr.onload();
+    //xhr.onload();
 
     document.getElementById('outsideOnload').innerHTML = myVar;
     console.log(myVar);

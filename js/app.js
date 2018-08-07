@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     xhr.onload = function() {
             myVar = JSON.parse(xhr.responseText);
             console.log(myVar);
-            document.getElementById('insideOnload').innerHTML = myvar;
+            document.getElementById('insideOnload').innerHTML = myVar;
     };
 
     xhr.onload();

@@ -56,4 +56,6 @@ document.addEventListener('DOMContentLoaded', function(){
 		xhr.send();
 	}
 
+getFive(onComplete);
+
 });

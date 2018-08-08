@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (var i in myVar) {
         	innerText += myVar[i];
         }
-        
+
         console.log(myVar);
         document.getElementById('insideOnload').innerHTML = innerText;
     };
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //     document.getElementById('insideOnload').innerHTML = innerText;
     // 	return myVar;
     // }
-    xhr.open("GET", "/json/all.json", true);
+    xhr.open("GET", "json/all.json", true);
     xhr.send();
     // xhr.onload();
 

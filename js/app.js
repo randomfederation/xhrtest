@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-	// var myVar;
 	var myVar;
     var xhr = new XMLHttpRequest();
     // xhr.overrideMimeType("application/json");
-    
+
     xhr.onload = function() {
 
         myVar = JSON.parse(xhr.responseText);
@@ -34,5 +33,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // xhr.onload();
 
     document.getElementById('outsideOnload').innerHTML = myVar;
-    console.log("outside" + myVar);
+    console.log("outside " + myVar);
 });

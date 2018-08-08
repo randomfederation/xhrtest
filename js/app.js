@@ -1,37 +1,64 @@
-document.addEventListener('DOMContentLoaded', function() {
+// document.addEventListener('DOMContentLoaded', function() {
+	// var myVar;
+	// var xhr = new XMLHttpRequest();
+	// // xhr.overrideMimeType("application/json");
+
+	// xhr.onload = function() {
+
+	// 	myVar = JSON.parse(xhr.responseText);
+	// 	innerText = "";
+
+	// 	for (var i in myVar) {
+	// 		innerText += myVar[i];
+	// 	}
+
+	// 	console.log(myVar);
+	// 	document.getElementById('insideOnload').innerHTML = innerText;
+	// };
+
+	// xhr.open("GET", "json/all.json", true);
+	// xhr.send();
+	// // xhr.onload();
+
+	// document.getElementById('outsideOnload').innerHTML = myVar;
+	// console.log("outside " + myVar);
+// });
+
+
+
+document.addEventListener('DOMContentLoaded', function(){
+
 	var myVar;
-    var xhr = new XMLHttpRequest();
-    // xhr.overrideMimeType("application/json");
+	function onComplete(myVar) { // When the code completes, do this
+		console.log(myVar);
+		var innerText = "";
 
-    xhr.onload = function() {
+		for (var i in myVar) {
+			innerText += myVar[i];
+		}
 
-        myVar = JSON.parse(xhr.responseText);
-        innerText = "";
+		document.getElementById('outsideOnload').innerHTML = innerText;
+	}
 
-        for (var i in myVar) {
-        	innerText += myVar[i];
-        }
-
-        console.log(myVar);
-        document.getElementById('insideOnload').innerHTML = innerText;
-    };
+	function getFive(whenDone) {
 
 
-    // function getData() {
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function() {
 
-    // 	myVar = JSON.parse(xhr.responseText);
-    // 	console.log(myVar);
-    // 	innerText = "";
-    // 	 for (var i in myVar) {
-    //         	innerText += myVar[i];
-    //         }
-    //     document.getElementById('insideOnload').innerHTML = innerText;
-    // 	return myVar;
-    // }
-    xhr.open("GET", "json/all.json", true);
-    xhr.send();
-    // xhr.onload();
+			myVar = JSON.parse(xhr.responseText);
+			whenDone(myVar);
+			console.log(myVar);
+			document.getElementById('insideOnload').innerHTML = myVar;
+		};
 
-    document.getElementById('outsideOnload').innerHTML = myVar;
-    console.log("outside " + myVar);
+		xhr.open("GET", "json/all.json", true);
+		xhr.send();
+	}
+
+	while ( !getFive(onComplete) ) {
+
+	}
+	
+
 });
